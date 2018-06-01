@@ -5,7 +5,7 @@
 # EXAMPLE USAGE FOR CRC
 #
 #
-
+from PyCRC import *
 from PCRC.CRC16 import CRC16
 from PCRC.CRC16DNP import CRC16DNP
 from PCRC.CRC16Kermit import CRC16Kermit
@@ -21,21 +21,21 @@ if __name__ == "__main__":
     target = b'\x05d\x05\xc0\x00\x01\x00\x0c'
 
     # DECIMAL EXAMPLE
-    target = '12341234'
+    #target = '12341234'
 
-    print("The results for {} are".format(target))
+    #print("The results for {} are".format(target))
+    #print("{:20s} {:10X}".format(
+    #    'CRC-CCITT(XModem)', CRCCCITT().calculate(target)))
+    #print("{:20s} {:10x}".format(
+    #    'CRC-CCITT(0xFFFF)', CRCCCITT(version="FFFF").calculate(target)))
+    #print("{:20s} {:10x}".format(
+    #    'CRC-CCITT(0x1D0F)', CRCCCITT(version="1D0F").calculate(target)))
+    #print("{:10s} {:20X}".format('CRC-16', CRC16().calculate(target)))
     print("{:20s} {:10X}".format(
-        'CRC-CCITT(XModem)', CRCCCITT().calculate(target)))
-    print("{:20s} {:10x}".format(
-        'CRC-CCITT(0xFFFF)', CRCCCITT(version="FFFF").calculate(target)))
-    print("{:20s} {:10x}".format(
-        'CRC-CCITT(0x1D0F)', CRCCCITT(version="1D0F").calculate(target)))
-    print("{:10s} {:20X}".format('CRC-16', CRC16().calculate(target)))
-    print("{:20s} {:10X}".format(
-        'CRC-16 (Modbus)', CRC16(modbus_flag=True).calculate(target)))
-    print("{:20s} {:10X}".format(
-        'CRC-16 (SICK)', CRC16SICK().calculate(target)))
-    print("{:20s} {:10X}".format('CRC-DNP', CRC16DNP().calculate(target)))
-    print("{:20s} {:10X}".format('CRC-32', CRC32().calculate(target)))
-    print("{:20s} {:10X}".format(
-        'CRC-16 (Kermit)', CRC16Kermit().calculate(target)))
+        'CRC-16 (Modbus)', CRC16(modbus_flag=True).calculate(target)), 'target=', target)
+    #print("{:20s} {:10X}".format(
+    #    'CRC-16 (SICK)', CRC16SICK().calculate(target)))
+    #print("{:20s} {:10X}".format('CRC-DNP', CRC16DNP().calculate(target)))
+    #print("{:20s} {:10X}".format('CRC-32', CRC32().calculate(target)))
+    #print("{:20s} {:10X}".format(
+    #    'CRC-16 (Kermit)', CRC16Kermit().calculate(target)))
